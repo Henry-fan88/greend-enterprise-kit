@@ -1,0 +1,54 @@
+{
+  "name": "greend-desktop-app",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Henry Fan",
+  "description": "Electron desktop shell for GreenD. Connects to the central GreenD company server.",
+  "main": "main.js",
+  "scripts": {
+    "desktop": "electron .",
+    "set-server-url": "node ./scripts/set-server-url.mjs",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac dmg",
+    "dist:mac:arm64": "electron-builder --mac dmg --arm64",
+    "dist:mac:x64": "electron-builder --mac dmg --x64",
+    "dist:win": "electron-builder --win nsis",
+    "dist:win:arm64": "electron-builder --win nsis --arm64",
+    "dist:win:x64": "electron-builder --win nsis --x64",
+    "pack": "electron-builder --dir"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.greend.desktop",
+    "productName": "GreenD",
+    "directories": {
+      "output": "release"
+    },
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "files": [
+      "main.js",
+      "assets/**/*",
+      "scripts/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.business"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  }
+}

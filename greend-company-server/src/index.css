@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+/* React Grid Layout Overrides */
+
+/* Placeholder (shadow effect, grey color) */
+.react-grid-item.react-grid-placeholder {
+  background: rgba(156, 163, 175, 0.15) !important; /* Tailwind gray-400 with low opacity */
+  border-radius: 0.75rem !important; /* Match panel rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; /* Tailwind shadow-lg */
+  opacity: 1 !important;
+  border: 2px dashed rgba(156, 163, 175, 0.4) !important;
+  transition-duration: 100ms;
+  z-index: 0 !important;
+  user-select: none;
+}
+
+.react-grid-item.resizing,
+.react-grid-item.react-draggable-dragging {
+  z-index: 10 !important;
+}
+
+/* Resize Handle (bigger, rounded) */
+.react-resizable-handle-se {
+  width: 32px !important;
+  height: 32px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  background-image: none !important; /* Remove default triangle */
+  cursor: se-resize !important;
+}
+
+.react-resizable-handle-se::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid #9ca3af; /* Tailwind gray-400 */
+  border-bottom: 3px solid #9ca3af;
+  border-bottom-right-radius: 0.75rem; /* Match panel rounded-xl */
+  transition: border-color 0.2s;
+}
+
+.react-resizable-handle-se:hover::after {
+  border-color: #4b5563; /* Tailwind gray-600 */
+}

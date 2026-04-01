@@ -1,0 +1,11 @@
+node_modules/
+release/
+.env
+.tmp-data/
+.DS_Store
+
+greend-company-server/node_modules/
+greend-company-server/.env
+greend-company-server/.tmp-data/
+greend-desktop-app/node_modules/
+greend-desktop-app/release/
