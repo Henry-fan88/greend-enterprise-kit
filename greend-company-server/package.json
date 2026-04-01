@@ -7,6 +7,9 @@
   "bin": {
     "greend-server": "./bin/greend-server.mjs"
   },
+  "publishConfig": {
+    "access": "restricted"
+  },
   "files": [
     "bin/",
     "dist/",
