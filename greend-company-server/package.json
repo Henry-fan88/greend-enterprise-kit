@@ -1,5 +1,5 @@
 {
-  "name": "greend-company-server",
+  "name": "@greend/greend-company-server",
   "version": "1.0.0",
   "type": "module",
   "description": "Central GreenD server for enterprise deployment. Hosts the UI and API while persisting data on the company server filesystem.",
